@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		553D6B7D292BBB2C00030C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553D6B7C292BBB2C00030C50 /* GoogleService-Info.plist */; };
 		553D6B84292BEC3A00030C50 /* Modularer Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D6B83292BEC3A00030C50 /* Modularer Slot.swift */; };
+		559E7F7429A6263500CC1E74 /* TestingStuff2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E7F7329A6263500CC1E74 /* TestingStuff2.swift */; };
+		559E7F7629A63D5A00CC1E74 /* TestingStuff3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E7F7529A63D5A00CC1E74 /* TestingStuff3.swift */; };
 		55A80752293D2D5500FDA27F /* TestingStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A80751293D2D5500FDA27F /* TestingStuff.swift */; };
 		55B60C1228F5E07500694507 /* ESS_Pilot_v2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B60C1128F5E07500694507 /* ESS_Pilot_v2_0App.swift */; };
 		55B60C1428F5E07500694507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B60C1328F5E07500694507 /* ContentView.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		553D6B7C292BBB2C00030C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		553D6B83292BEC3A00030C50 /* Modularer Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modularer Slot.swift"; sourceTree = "<group>"; };
+		559E7F7329A6263500CC1E74 /* TestingStuff2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff2.swift; sourceTree = "<group>"; };
+		559E7F7529A63D5A00CC1E74 /* TestingStuff3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff3.swift; sourceTree = "<group>"; };
 		55A80751293D2D5500FDA27F /* TestingStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff.swift; sourceTree = "<group>"; };
 		55B55F0B2933DB490011CF53 /* ESS-Pilot-v2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ESS-Pilot-v2.0.entitlements"; sourceTree = "<group>"; };
 		55B60C0E28F5E07500694507 /* ESS-Pilot-v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ESS-Pilot-v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,8 @@
 				55B60C2828F5E2DA00694507 /* Noten.swift */,
 				553D6B83292BEC3A00030C50 /* Modularer Slot.swift */,
 				55A80751293D2D5500FDA27F /* TestingStuff.swift */,
+				559E7F7329A6263500CC1E74 /* TestingStuff2.swift */,
+				559E7F7529A63D5A00CC1E74 /* TestingStuff3.swift */,
 			);
 			path = " Views";
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B60C2328F5E0E300694507 /* Stundenplan.swift in Sources */,
+				559E7F7629A63D5A00CC1E74 /* TestingStuff3.swift in Sources */,
 				55B60C1428F5E07500694507 /* ContentView.swift in Sources */,
+				559E7F7429A6263500CC1E74 /* TestingStuff2.swift in Sources */,
 				55B60C2928F5E2DA00694507 /* Noten.swift in Sources */,
 				55A80752293D2D5500FDA27F /* TestingStuff.swift in Sources */,
 				55B60C2528F5E0F400694507 /* Karte.swift in Sources */,

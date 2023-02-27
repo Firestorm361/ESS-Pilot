@@ -6,36 +6,26 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct TestingStuff: View {
     var body: some View {
-        
-        
-        ZStack{
-            Rectangle()
-                .fill(Color.red)
-            
-            HStack (){
-                Rectangle()
-                    .fill(Color.blue)
-                    .frame(width: 100, height: 100)
-                
-                
-                
-                
-            }
-            
-            
-            
+        NavigationView {
+            WebView(request: URLRequest(url: URL(string: "https://www.esss.de/entschuldigungstool")!))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
-    
-    struct TestingStuff_Previews: PreviewProvider {
-        static var previews: some View {
-            TestingStuff()
-        }
+}
+
+struct WebView: UIViewRepresentable {
+    let request: URLRequest
+
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
     }
-    
-    
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
+    }
 }

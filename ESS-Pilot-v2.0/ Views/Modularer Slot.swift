@@ -46,7 +46,7 @@ struct Modularer_Slot: View {
             
             
             
-            
+            //Hier super mega advanced Broadcast System einfügen 
             
             
             

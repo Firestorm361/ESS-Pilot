@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
-        UITabBar.appearance().backgroundColor = .black
-    }
+        UITabBar.appearance().backgroundColor = .black}
+
     
     var body: some View {
    
@@ -47,7 +47,7 @@ struct ContentView: View {
                 }
             
             
-            Modularer_Slot()
+            TestingStuff3()
                 .tabItem(){
                     Image(systemName: "gear.circle")
                     Text("N/A")
