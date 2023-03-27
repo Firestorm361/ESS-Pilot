@@ -5,17 +5,21 @@
 //  Created by Dave on 11.10.22.
 //
 
-import SwiftUI 
+import SwiftUI
 
 struct ContentView: View {
+    
+@State var selection = 3
     
     init() {
         UITabBar.appearance().backgroundColor = .black}
 
     
     var body: some View {
-   
-        TabView {
+
+
+        
+        TabView(selection:$selection) {
             
             
             
@@ -24,6 +28,7 @@ struct ContentView: View {
                     Image(systemName: "clock.circle")
                     Text("Stundenplan")
                 }
+                .tag(1)
             
             
             Karte()
@@ -31,6 +36,7 @@ struct ContentView: View {
                     Image(systemName: "map.circle")
                     Text("Karte")
                 }
+                .tag(2)
             
             
             Zentrale()
@@ -38,6 +44,7 @@ struct ContentView: View {
                     Image(systemName: "books.vertical.circle")
                     Text("Zentrale")
                 }
+                .tag(3)
             
             
             Noten()
@@ -45,6 +52,7 @@ struct ContentView: View {
                     Image(systemName: "graduationcap.circle")
                     Text("Noten")
                 }
+                .tag(4)
             
             
             TestingStuff3()
@@ -52,9 +60,11 @@ struct ContentView: View {
                     Image(systemName: "gear.circle")
                     Text("N/A")
                 }
+                .tag(5)
             
         }
         
+ 
         .accentColor(.blue)
         
         

@@ -10,10 +10,10 @@ import UserNotifications
 
 @main
 struct ESS_Pilot_v2_0App: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
 }
-

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		553D6B7D292BBB2C00030C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553D6B7C292BBB2C00030C50 /* GoogleService-Info.plist */; };
 		553D6B84292BEC3A00030C50 /* Modularer Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D6B83292BEC3A00030C50 /* Modularer Slot.swift */; };
 		559E7F7429A6263500CC1E74 /* TestingStuff2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E7F7329A6263500CC1E74 /* TestingStuff2.swift */; };
 		559E7F7629A63D5A00CC1E74 /* TestingStuff3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E7F7529A63D5A00CC1E74 /* TestingStuff3.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		553D6B7C292BBB2C00030C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		553D6B83292BEC3A00030C50 /* Modularer Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modularer Slot.swift"; sourceTree = "<group>"; };
 		559E7F7329A6263500CC1E74 /* TestingStuff2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff2.swift; sourceTree = "<group>"; };
 		559E7F7529A63D5A00CC1E74 /* TestingStuff3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff3.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			children = (
 				55B55F0B2933DB490011CF53 /* ESS-Pilot-v2.0.entitlements */,
 				55B60C2C28F8B16400694507 /* ESS-Pilot-v2-0-Info.plist */,
-				553D6B7C292BBB2C00030C50 /* GoogleService-Info.plist */,
 				55B60C1F28F5E0AE00694507 /*  Views */,
 				55B60C1328F5E07500694507 /* ContentView.swift */,
 				55B60C1128F5E07500694507 /* ESS_Pilot_v2_0App.swift */,
@@ -170,7 +167,6 @@
 			files = (
 				55B60C1928F5E07600694507 /* Preview Assets.xcassets in Resources */,
 				55B60C1628F5E07600694507 /* Assets.xcassets in Resources */,
-				553D6B7D292BBB2C00030C50 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +328,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = A;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,7 +365,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = A;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -68,3 +68,5 @@ struct Modularer_Slot_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
+
+

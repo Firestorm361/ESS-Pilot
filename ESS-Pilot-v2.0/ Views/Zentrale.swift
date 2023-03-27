@@ -151,7 +151,7 @@ struct Zentrale: View {
                     
                     //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
                     Button(action: {
-                    })
+                        self.isPresented2 = true})
                     {Text("Entschuldigungstool") }
                         .frame(width: 100, height: 56)
                         .font(.system(size: 10.2))
@@ -167,8 +167,7 @@ struct Zentrale: View {
                         .sheet(isPresented: $isPresented2) {
                             Entschuldigungstool()}
                     
-                    
-                    
+                          
                     //Button fürs Fehlzeiten Menü, evtl lustiges gif für Fehlzeitenlose?
                     Button(action: {
                         print("Test Erfolgt")})
@@ -320,9 +319,10 @@ struct Zentrale: View {
                         .padding(.horizontal)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("An welchen Tagen sollen Push-Benachrichtigungen gesendet werden?")
+                        Text("An welchen Tagen möchtest du Benachrichtigungen erhalten?")
                             .font(.title2)
                             .fontWeight(.semibold)
+
                         
                         ForEach(Weekday.allCases, id: \.self) { day in
                             Button(action: {
@@ -360,6 +360,8 @@ struct Zentrale: View {
                             .frame(maxWidth: .infinity)
                             .background(Color.red)
                             .cornerRadius(10)
+                            .position(x: 175, y: 160)
+                          
                     }
                     
                     Button(action: {
@@ -387,6 +389,7 @@ struct Zentrale: View {
                             .frame(maxWidth: .infinity)
                             .background(selectedDays.isEmpty ? Color.gray : Color.green)
                             .cornerRadius(10)
+                            .position(x: 175, y: 160)
                     }
                     .disabled(selectedDays.isEmpty)
                     .padding(.horizontal)
