@@ -10,6 +10,7 @@ import SwiftUI
 struct Karte: View {
     var body: some View {
 
+        //Liegt auf Eis, RNK lässt sich Zeit. 
             
         ZStack (alignment: .top){ //Mutter ZStack Start
             Color.black

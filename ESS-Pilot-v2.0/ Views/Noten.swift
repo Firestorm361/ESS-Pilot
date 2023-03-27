@@ -11,7 +11,8 @@ struct Noten: View {
     @State private var navPath = NavigationPath()
     var body: some View {
         
-            
+        //Top Priorität 
+        
         ZStack (alignment: .top){ //Mutter ZStack Start
             Color.black
                 .brightness(0.05)

@@ -55,7 +55,7 @@ struct ContentView: View {
                 .tag(4)
             
             
-            TestingStuff3()
+            TestingStuff()
                 .tabItem(){
                     Image(systemName: "gear.circle")
                     Text("N/A")

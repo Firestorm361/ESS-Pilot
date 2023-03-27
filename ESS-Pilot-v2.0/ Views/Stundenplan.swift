@@ -10,7 +10,7 @@ import SwiftUI
 struct Stundenplan: View {
     var body: some View {
   
-        
+        //API macht Fortschritte, abwarten. 
         //Wenn Untis API fehlschlägt, manuelle implementation des Stundenplans -> App wirs größetenteils obsolete. 
             
             ZStack {

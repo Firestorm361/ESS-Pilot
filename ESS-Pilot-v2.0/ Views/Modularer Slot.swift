@@ -12,6 +12,8 @@ struct Modularer_Slot: View {
     var body: some View {
         VStack {
             
+            //Obsolete
+            
             Button("N/A") {
                 UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                     

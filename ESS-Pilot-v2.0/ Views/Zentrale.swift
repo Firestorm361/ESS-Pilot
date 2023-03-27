@@ -15,6 +15,7 @@ struct Zentrale: View {
     @State private var isPresented2 = false
         var body: some View {
             
+            //Top Priorität
         
         ZStack (alignment: .top){ //ZStack 1 Start
             Color.black

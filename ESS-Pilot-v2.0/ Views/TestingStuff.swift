@@ -10,6 +10,9 @@ import WebKit
 
 struct TestingStuff: View {
     var body: some View {
+        
+        //Obsolete 
+        
         NavigationView {
             WebView(request: URLRequest(url: URL(string: "https://www.esss.de/entschuldigungstool")!))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
