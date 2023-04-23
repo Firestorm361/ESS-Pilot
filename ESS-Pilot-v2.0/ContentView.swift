@@ -11,8 +11,8 @@ struct ContentView: View {
     
 @State var selection = 3
     
-    init() {
-        UITabBar.appearance().backgroundColor = .black}
+    /* init() {
+        UITabBar.appearance().backgroundColor = .black}*/
 
     
     var body: some View {
@@ -31,12 +31,12 @@ struct ContentView: View {
                 .tag(1)
             
             
-            Karte()
+          /*  Karte()
                 .tabItem(){
                     Image(systemName: "map.circle")
                     Text("Karte")
                 }
-                .tag(2)
+                .tag(2) */
             
             
             Zentrale()
@@ -61,10 +61,11 @@ struct ContentView: View {
                     Text("N/A")
                 }
                 .tag(5) */
-            
-        }
         
- 
+        }
+        .onAppear {
+            UITabBar.appearance().barTintColor = UIColor(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+        }
         .accentColor(.red)
         
         

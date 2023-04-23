@@ -37,11 +37,12 @@ struct Zentrale: View {
                         isPresented.toggle()
                     }) {
                         Image(systemName: "bell.fill")
-                            .font(.system(size: 30.0))
+                            .font(.system(size: 25.0))
                             .foregroundColor(.gray)
                             .padding()
                             .sheet(isPresented: $isPresented) {
                                 Einstellungen_Zentrale()}}
+                            .position(x: 1100,y: 60)
                     
                     
                     //Einstellungen
@@ -49,9 +50,10 @@ struct Zentrale: View {
                         //Vaccant
                     }) {
                         Image(systemName: "gearshape.fill")
-                            .font(.system(size: 30.0))
+                            .font(.system(size: 25.0))
                             .foregroundColor(.gray)
                             .padding()}
+                            .position(x: 550,y: 60)
                     
                     
             } //HStack 1 Ende
@@ -62,6 +64,7 @@ struct Zentrale: View {
     
             
             ZStack { //ZStack Start 2.0
+                
                 
     
                 Group{//Group Kopfzeile Start
@@ -117,7 +120,7 @@ struct Zentrale: View {
                     
 
                     //Button der den Ferienkalender Öffnet lol.
-                    Button(action: {
+                 Button(action: {
                         print("Test Erfolgt")
                     }) {
                         VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
@@ -236,6 +239,13 @@ struct Zentrale: View {
                         .position(x: 1100, y: 300)
                     }
 
+   
+                    
+                    
+                    
+                    
+                    
+                    
                     
                 } //Group Buttons Ende
                 
@@ -261,7 +271,7 @@ struct Zentrale: View {
                         
                         
                         //Inhaltszeug
-                        Text("TODO, wohoo").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+                        Text("Keie Arbeiten / Prüfungen.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
                             .position(x: 220, y: 350)
                         
                         
@@ -292,7 +302,7 @@ struct Zentrale: View {
                         
                         
                         //Inhaltszeug
-                        Text("TODO, wohoo").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+                        Text("Keine Hausaufgaben.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
                             .position(x: 647, y: 350)
                         
                         
