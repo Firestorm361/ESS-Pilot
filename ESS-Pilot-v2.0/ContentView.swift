@@ -55,17 +55,17 @@ struct ContentView: View {
                 .tag(4)
             
             
-            TestingStuff()
+         /*   TestingStuff()
                 .tabItem(){
                     Image(systemName: "gear.circle")
                     Text("N/A")
                 }
-                .tag(5)
+                .tag(5) */
             
         }
         
  
-        .accentColor(.blue)
+        .accentColor(.red)
         
         
     }

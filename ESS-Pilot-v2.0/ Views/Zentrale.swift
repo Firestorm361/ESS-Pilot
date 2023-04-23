@@ -118,72 +118,124 @@ struct Zentrale: View {
 
                     //Button der den Ferienkalender Öffnet lol.
                     Button(action: {
-                        print("Test Erfolgt")})
-                    {Text("Ferienkalender") }
+                        print("Test Erfolgt")
+                    }) {
+                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                            Image(systemName: "calendar")
+                                .font(.system(size: 20))
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
+                            Text("Ferienkalender")
+                                .font(.system(size: 10.5))
+                                .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
+                        }
                         .frame(width: 100, height: 56)
-                        .font(.system(size: 10.5))
                         .padding()
                         .foregroundColor(.white)
+                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                        .cornerRadius(15)
                         .overlay(
                             RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100))
-                        .background(Color.blue)
-                        .cornerRadius(15)
+                                .position(x: 900, y: 100)
+                        )
                         .buttonStyle(PlainButtonStyle())
                         .position(x: 950, y: 190)
+                        .alignmentGuide(.leading) { _ in 20 } // Align to the left
+                    }
+
+
+
+
                     
                     
                     //Button der zu den News bzw. zum Schulnewsletter führt
                     Button(action: {
-                        print("Test Erfolgt")})
-                    {Text("News") }
+                        print("Test Erfolgt")
+                    }) {
+                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                            Image(systemName: "newspaper")
+                                .font(.system(size: 20))
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
+                            Text("News")
+                                .font(.system(size: 10.5))
+                                .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
+                        }
                         .frame(width: 100, height: 56)
-                        .font(.system(size: 10.5))
                         .padding()
                         .foregroundColor(.white)
+                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                        .cornerRadius(15)
                         .overlay(
                             RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100))
-                        .background(Color.red)
-                        .cornerRadius(15)
+                                .position(x: 900, y: 100)
+                        )
                         .buttonStyle(PlainButtonStyle())
                         .position(x: 1100, y: 190)
-                    
+                        .alignmentGuide(.leading) { _ in 20 } // Align to the left
+                    }
+
+
+
+       
                     
                     //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
                     Button(action: {
-                        self.isPresented2 = true})
-                    {Text("Entschuldigungstool") }
+                        self.isPresented2 = true
+                    }) {
+                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                            Image(systemName: "doc")
+                                .font(.system(size: 20))
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
+                            Text("Entschuldigungstool")
+                                .font(.system(size: 10.2))
+                                .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
+                        }
                         .frame(width: 100, height: 56)
-                        .font(.system(size: 10.2))
                         .padding()
                         .foregroundColor(.white)
+                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                        .cornerRadius(15)
                         .overlay(
                             RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100))
-                        .background(Color.green)
-                        .cornerRadius(15)
+                                .position(x: 900, y: 100)
+                        )
                         .buttonStyle(PlainButtonStyle())
                         .position(x: 950, y: 300)
                         .sheet(isPresented: $isPresented2) {
-                            Entschuldigungstool()}
+                            Entschuldigungstool()
+                        }
+                    }
+
                     
                           
                     //Button fürs Fehlzeiten Menü, evtl lustiges gif für Fehlzeitenlose?
                     Button(action: {
-                        print("Test Erfolgt")})
-                    {Text("Fehlzeiten") }
+                        print("Test Erfolgt")
+                    }) {
+                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                            Image(systemName: "clock.badge.xmark")
+                                .font(.system(size: 20))
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
+                            Text("Fehlzeiten")
+                                .font(.system(size: 10.5))
+                                .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
+                        }
                         .frame(width: 100, height: 56)
-                        .font(.system(size: 10.5))
                         .padding()
                         .foregroundColor(.white)
+                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                        .cornerRadius(15)
                         .overlay(
                             RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100))
-                        .background(Color.yellow)
-                        .cornerRadius(15)
+                                .position(x: 900, y: 100)
+                        )
                         .buttonStyle(PlainButtonStyle())
                         .position(x: 1100, y: 300)
+                    }
+
                     
                 } //Group Buttons Ende
                 
