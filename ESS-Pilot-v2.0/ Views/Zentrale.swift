@@ -13,325 +13,309 @@ import UserNotifications
 struct Zentrale: View {
     @State private var isPresented = false
     @State private var isPresented2 = false
-        var body: some View {
-            
-            //Top Priorität
+    @State private var isPresented3 = false
+        let columns = [
+            GridItem(.flexible(), spacing: 15),
+            GridItem(.flexible(), spacing: 15)
+        ]
         
-        ZStack (alignment: .top){ //ZStack 1 Start
-            Color.black
-                .brightness(0.05)
-                .ignoresSafeArea()
-            
-            
-            VStack (alignment: .center){//VStack 1 Start
-                
-                    
-                HStack (alignment: .top) {//HStack 1 Start
-                    
+        var body: some View {
+            VStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        //Kopfzeilen-Label Start
+                        Label("Person", systemImage: "person.fill")
+                            .labelStyle(IconOnlyLabelStyle())
+                            .font(.system(size: 45.0))
+                            .foregroundColor(Color.gray)
                         
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Label("Guten Tag,", systemImage: "person.fill")
+                            .labelStyle(TitleOnlyLabelStyle())
+                            .font(.system(size: 12.5))
+                            .foregroundColor(Color.white)
+                        
+                        
+                        
+                        Label("Gast", systemImage: "person.fill")
+                            .labelStyle(TitleOnlyLabelStyle())
+                            .font(.system(size: 22.5))
+                            .foregroundColor(Color.white)
+                    }
                     Spacer()
-                
                     
-                    //Benachrichtigungen
-                    Button(action: {
-                        isPresented.toggle()
-                    }) {
-                        Image(systemName: "bell.fill")
-                            .font(.system(size: 25.0))
-                            .foregroundColor(.gray)
+                    VStack(alignment: .leading) {
+                        Label("Nächste Stunde • Schule aus", systemImage: "person.fill")
+                            .labelStyle(TitleOnlyLabelStyle())
+                            .font(.system(size: 22.5))
+                            .foregroundColor(Color.white)
+                        
+                        
+                        
+                        Label("Wir wünschen dir einen schönen Tag!", systemImage: "person.fill")
+                            .labelStyle(TitleOnlyLabelStyle())
+                            .font(.system(size: 12.5))
+                            .foregroundColor(Color.white)
+                        
+                       
+                    }
+                    Spacer()
+                   
+                    
+                    HStack() {
+                        //Benachrichtigungen
+                        Button(action: {
+                            isPresented.toggle()
+                        }) {
+                            Image(systemName: "bell.fill")
+                                .font(.system(size: 25.0))
+                                .foregroundColor(.gray)
+                                .sheet(isPresented: $isPresented) {
+                                    Einstellungen_Zentrale()}}
+                        
+                        
+                        
+                        //Einstellungen
+                        Button(action: {
+                            //Vaccant
+                        }) {
+                            Image(systemName: "gearshape.fill")
+                                .font(.system(size: 25.0))
+                                .foregroundColor(.gray)
+                            }
+                    }
+                    
+                    
+                }
+                .padding()
+                Divider()
+                    .overlay(Color.gray)
+                    .frame(minHeight: 11)
+                
+                HStack(alignment: .top, spacing: 40) {
+                    VStack {
+                        ZStack{
+                            //Rechteck Hellgrau
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                .frame(width: 325, height: 365)
+                                
+                            
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.gray)
+                                .frame(width: 300, height: 10)
+                                .padding()
+                                .position(x: 160, y: 65)
+                            
+                                
+                            
+                            //Magazine Icon
+                            
+                            //Meine Termine / Hausaufgaben
+                            Text("Meine Arbeiten / Pfüfungen").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
+                                .position(x: 160, y: 40)
+                            
+                            
+                            //Inhaltszeug
+                            Text("Keine Arbeiten.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+                                .position(x: 160, y: 200)
+                        }
+                    }
+                    .padding()
+                    
+                  
+                        VStack {
+                            ZStack{
+                                
+                                
+                                
+                                //Rechteck
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .frame(width: 325, height: 365)
+                                
+                                
+                                //Rechteck Hell
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.gray)
+                                    .frame(width: 300, height: 10)
+                                    .padding()
+                                    .position(x: 160, y: 65)
+                                
+                                
+                                //Calendar Icon
+                                
+                                //Meine Termine / Hausaufgaben
+                                Text("Meine Termine / Hausaufgaben").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
+                                    .position(x: 160, y: 40)
+                                
+                                
+                                
+                                //Inhaltszeug
+                                Text("Keine Hausaufgaben.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+                                    .position(x: 175, y: 200)
+                                    
+                            }
+                        }
+                    .padding()
+
+                    
+                    
+                    
+                    
+                    VStack(spacing: 0) {
+                        LazyVGrid(columns: columns,
+                                  alignment:
+                                .center,
+                                  spacing: 10) {
+                            
+                            
+                                
+                                //Button der den Ferienkalender Öffnet lol.
+                             Button(action: {
+                                    print("Test Erfolgt")
+                                }) {
+                                    VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                                        Image(systemName: "calendar.badge.exclamationmark")
+                                            .font(.system(size: 20))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .foregroundColor(.white)
+                                      
+                                           
+                                        Text("Ferienkalender")
+                                            .font(.system(size: 10.5))
+                                            .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                            .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
+                                    }
+                                    .frame(width: 100, height: 56)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .cornerRadius(15)
+                                    .buttonStyle(PlainButtonStyle())
+                                }
+
+                            
+
+
+                                //Button der zu den News bzw. zum Schulnewsletter führt
+                                Button(action: {
+                                    print("Test Erfolgt")
+                                    self.isPresented3 = true
+                                }) {
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Image(systemName: "newspaper")
+                                            .font(.system(size: 20))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        Text("News")
+                                            .font(.system(size: 10.5))
+                                            .lineLimit(1)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .frame(width: 100, height: 56)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .cornerRadius(15)
+                                    .buttonStyle(PlainButtonStyle())
+                                    .sheet(isPresented: $isPresented3) {
+                                        NewsView()
+                                    }
+                                }
+
+
+
+                   
+                                
+                                //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
+                                Button(action: {
+                                    self.isPresented2 = true
+                                }) {
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Image(systemName: "doc")
+                                            .font(.system(size: 20))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        Text("Entschuldigungstool")
+                                            .font(.system(size: 10.2))
+                                            .lineLimit(1)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .frame(width: 100, height: 56)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .cornerRadius(15)
+                                    .buttonStyle(PlainButtonStyle())
+                                    .sheet(isPresented: $isPresented2) {
+                                        Entschuldigungstool()
+                                    }
+                                }
+
+                                
+                                      
+                                //Button fürs Fehlzeiten Menü, evtl lustiges gif für Fehlzeitenlose?
+                                Button(action: {
+                                    print("Test Erfolgt")
+                                }) {
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Image(systemName: "clock.badge.xmark")
+                                            .font(.system(size: 20))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        Text("Fehlzeiten")
+                                            .font(.system(size: 10.5))
+                                            .lineLimit(1)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .frame(width: 100, height: 56)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .cornerRadius(15)
+                                    .buttonStyle(PlainButtonStyle())
+                                    }
+                            
+                            
+                            
+                            
+                        }
+                      .padding()
+
+                        RoundedRectangle(cornerRadius: 20)
                             .padding()
-                            .sheet(isPresented: $isPresented) {
-                                Einstellungen_Zentrale()}}
-                            .position(x: 1100,y: 60)
+                            .foregroundColor(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                    }
+                    .padding()
                     
-                    
-                    //Einstellungen
-                    Button(action: {
-                        //Vaccant
-                    }) {
-                        Image(systemName: "gearshape.fill")
-                            .font(.system(size: 25.0))
-                            .foregroundColor(.gray)
-                            .padding()}
-                            .position(x: 550,y: 60)
-                    
-                    
-            } //HStack 1 Ende
-                    
-                    
-        } //VStack 1 Ende
-            
+                }
+                .padding()
+                .frame(height: 460)
+                Spacer()
+            }
+            .padding()
+            .background(Color(red: 0.05, green: 0.05, blue: 0.05))
+        }
     
-            
-            ZStack { //ZStack Start 2.0
-                
-                
     
-                Group{//Group Kopfzeile Start
-                
-                    
-                    //Kopfzeilen-Label Start
-                    Label("Person", systemImage: "person.fill")
-                        .labelStyle(IconOnlyLabelStyle())
-                        .font(.system(size: 45.0))
-                        .foregroundColor(Color.gray)
-                        .position(x: 40,y: 35)
-                    
-                    
-                    Label("Guten Tag,", systemImage: "person.fill")
-                        .labelStyle(TitleOnlyLabelStyle())
-                        .font(.system(size: 12.5))
-                        .foregroundColor(Color.white)
-                        .position(x: 115,y: 24)
-                    
-                    
-                    Label("Gast", systemImage: "person.fill")
-                        .labelStyle(TitleOnlyLabelStyle())
-                        .font(.system(size: 22.5))
-                        .foregroundColor(Color.white)
-                        .position(x: 105,y: 46)
-                    
-                    
-                    Label("Nächste Stunde • Schule aus", systemImage: "person.fill")
-                        .labelStyle(TitleOnlyLabelStyle())
-                        .font(.system(size: 22.5))
-                        .foregroundColor(Color.white)
-                        .position(x: 600,y: 30)
-                    
-                    
-                    Label("Wir wünschen dir einen schönen Tag!", systemImage: "person.fill")
-                        .labelStyle(TitleOnlyLabelStyle())
-                        .font(.system(size: 12.5))
-                        .foregroundColor(Color.black)
-                        .brightness(0.2)
-                        .position(x: 600,y: 51)
-                    
-
-                    Divider()
-                        .frame(width: 1170)
-                        .overlay(.gray)
-                        .position(x: 600, y: 90)
-
-                
-            }//Group-Kopfzeile Ende.
-                
-                
-                Group{//Group Buttons Start
-                    
-
-                    //Button der den Ferienkalender Öffnet lol.
-                 Button(action: {
-                        print("Test Erfolgt")
-                    }) {
-                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
-                            Image(systemName: "calendar")
-                                .font(.system(size: 20))
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
-                            Text("Ferienkalender")
-                                .font(.system(size: 10.5))
-                                .lineLimit(1) // Add line limit to prevent the text from overflowing
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
-                        }
-                        .frame(width: 100, height: 56)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                        .cornerRadius(15)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100)
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .position(x: 950, y: 190)
-                        .alignmentGuide(.leading) { _ in 20 } // Align to the left
-                    }
-
-
-
-
-                    
-                    
-                    //Button der zu den News bzw. zum Schulnewsletter führt
-                    Button(action: {
-                        print("Test Erfolgt")
-                    }) {
-                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
-                            Image(systemName: "newspaper")
-                                .font(.system(size: 20))
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
-                            Text("News")
-                                .font(.system(size: 10.5))
-                                .lineLimit(1) // Add line limit to prevent the text from overflowing
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
-                        }
-                        .frame(width: 100, height: 56)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                        .cornerRadius(15)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100)
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .position(x: 1100, y: 190)
-                        .alignmentGuide(.leading) { _ in 20 } // Align to the left
-                    }
-
-
-
-       
-                    
-                    //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
-                    Button(action: {
-                        self.isPresented2 = true
-                    }) {
-                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
-                            Image(systemName: "doc")
-                                .font(.system(size: 20))
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
-                            Text("Entschuldigungstool")
-                                .font(.system(size: 10.2))
-                                .lineLimit(1) // Add line limit to prevent the text from overflowing
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
-                        }
-                        .frame(width: 100, height: 56)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                        .cornerRadius(15)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100)
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .position(x: 950, y: 300)
-                        .sheet(isPresented: $isPresented2) {
-                            Entschuldigungstool()
-                        }
-                    }
-
-                    
-                          
-                    //Button fürs Fehlzeiten Menü, evtl lustiges gif für Fehlzeitenlose?
-                    Button(action: {
-                        print("Test Erfolgt")
-                    }) {
-                        VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
-                            Image(systemName: "clock.badge.xmark")
-                                .font(.system(size: 20))
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align icon to the left
-                            Text("Fehlzeiten")
-                                .font(.system(size: 10.5))
-                                .lineLimit(1) // Add line limit to prevent the text from overflowing
-                                .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
-                        }
-                        .frame(width: 100, height: 56)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                        .cornerRadius(15)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .position(x: 900, y: 100)
-                        )
-                        .buttonStyle(PlainButtonStyle())
-                        .position(x: 1100, y: 300)
-                    }
-
-   
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                } //Group Buttons Ende
-                
-            } // ZStack Ende 2.0
-                
-                
-                
-                ZStack { //ZStack Prüfungen u. Arbeiten
-                    Group{ //Group Prüfungen u. Arbeiten
-                        
-                        //Rechteck
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                            .frame(width: 382.5, height: 412)
-                            .position(x: 220, y: 350)
-                        
-                        
-                        //Rechteck Hellgrau
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.2862745225429535, green: 0.2862745225429535, blue: 0.2862745225429535, alpha: 0.20000000298023224)))
-                            .frame(width: 354.5, height: 40)
-                            .position(x: 220, y: 225)
-                        
-                        
-                        //Inhaltszeug
-                        Text("Keie Arbeiten / Prüfungen.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
-                            .position(x: 220, y: 350)
-                        
-                        
-                        //Meine Arbeiten / Prüfungen
-                        Text("Meine Arbeiten / Prüfungen").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
-                            .position(x: 220, y: 175)
-                        
-                    } //Group Prüfungen u. Arbeiten Ende
-                } //ZStack Prüfungen u. Arbeiten Ende
-                
-            
-                
-                ZStack {//ZStack Termine / Hausaufgaben
-                    Group{ //Group Termine / Hausaufgaben
-                        
-                        //Rechteck
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                            .frame(width: 382.5, height: 412)
-                            .position(x: 647, y: 350)
-                        
-                        
-                        //Rechteck Hellgrau
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.2862745225429535, green: 0.2862745225429535, blue: 0.2862745225429535, alpha: 0.20000000298023224)))
-                            .frame(width: 354.5, height: 40)
-                            .position(x: 647, y: 225)
-                        
-                        
-                        //Inhaltszeug
-                        Text("Keine Hausaufgaben.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
-                            .position(x: 647, y: 350)
-                        
-                        
-                        //Meine Termine / Hausaufgaben
-                        Text("Meine Termine / Hausaufgaben").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
-                            .position(x: 647, y: 175)
-                        
-                    } //Group Termine / Hausaufgaben Ende
-                } //ZStack Termine / Hausaufgaben Ende
-                
-                
-                
-                ZStack { //ZStack Noten Diagramm
-                    Group { //Group Noten Diagramm
-                        
-                        //CurrentNotesStats
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                            .frame(width: 285, height: 185)
-                            .position(x: 1025, y: 460)
-                        
-                    } //Group Noten Diagramm Ende
-                } //ZStack Noten Diagramm Ende
-            } //ZStack 1 Ende
-        } // Var-Ende
+    
+    
+    
     }  //Struct-Ende
     
     
+
+
+
+
+
+
+
     
+
+
+
     struct Zentrale_Previews: PreviewProvider {
         static var previews: some View {
             Zentrale()
@@ -505,3 +489,29 @@ struct Zentrale: View {
 
 
 //Entschuldigungstool Ende
+
+
+//News
+
+struct NewsView: View {
+    var body: some View {
+        NavigationView {
+            WebView3(request: URLRequest(url: URL(string: "https://mailchi.mp/3ee801fba69d/newletter-test-17370815?e=167420e3f3")!))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+
+struct WebView3: UIViewRepresentable {
+    let request: URLRequest
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.load(request)
+    }
+}
