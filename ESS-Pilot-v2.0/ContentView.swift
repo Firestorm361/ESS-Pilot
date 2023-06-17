@@ -66,7 +66,7 @@ struct ContentView: View {
         .onAppear {
             UITabBar.appearance().barTintColor = UIColor(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
         }
-        .accentColor(.red)
+        .accentColor(.blue)
         
         
     }
