@@ -30,6 +30,11 @@ struct Noten: View {
     @State private var newSubjectName: String = ""
     @State private var showingAddSubject: Bool = false
 
+    var totalAverage: Double {
+        let totalWeight = subjects.reduce(0) { $0 + $1.average }
+        return subjects.isEmpty ? 0 : totalWeight / Double(subjects.count)
+    }
+
     var body: some View {
         NavigationView {
             List {
@@ -43,7 +48,7 @@ struct Noten: View {
                 }
                 .onDelete(perform: deleteSubject)
             }
-            .navigationBarTitle("Fächer")
+            .navigationBarTitle(Text("Fächer: \(totalAverage, specifier: "%.2f")"))
             .navigationBarItems(leading: EditButton(), trailing: Button(action: { showingAddSubject = true }) {
                 Image(systemName: "plus")
             })
@@ -161,4 +166,3 @@ struct SubjectView: View {
         }
     }
 }
-

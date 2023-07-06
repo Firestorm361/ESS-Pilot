@@ -8,8 +8,52 @@
 
 import UIKit
 import SwiftUI
+import WebKit
 
-struct StdSubject: Identifiable {
+class WebViewContainer {
+    static let shared = WebViewContainer()
+    let webView: WKWebView = WKWebView()
+}
+
+struct Stundenplan: View {
+    
+struct CustomColor {
+            
+    static let superGrau = Color("superGrau")
+            
+        }
+    
+    var body: some View {
+        NavigationView {
+            StundenplanView(request: URLRequest(url: URL(string: "https://tritone.webuntis.com/timetable-students-my/2023-07-01")!))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+struct StundenplanView: UIViewRepresentable {
+    let request: URLRequest
+
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WebViewContainer.shared.webView
+        if webView.url == nil {
+            webView.load(request)
+        }
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        // Keine Änderungen erforderlich, da die URL beim Laden gesetzt wird
+    }
+}
+
+
+
+
+
+
+/* struct StdSubject: Identifiable {
     let id = UUID()
     var name: String
     var teacher: String
@@ -197,7 +241,7 @@ struct Stundenplan_Previews: PreviewProvider {
             .preferredColorScheme(.light)
             .previewInterfaceOrientation(.landscapeLeft)
     }
-}
+} */
 
 
 

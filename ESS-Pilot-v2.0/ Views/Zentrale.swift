@@ -14,6 +14,13 @@ struct Zentrale: View {
     @State private var isPresented = false
     @State private var isPresented2 = false
     @State private var isPresented3 = false
+    
+    struct CustomColor {
+        
+        static let superGrau = Color("superGrau")
+        
+    }
+    
         let columns = [
             GridItem(.flexible(), spacing: 15),
             GridItem(.flexible(), spacing: 15)
@@ -23,12 +30,10 @@ struct Zentrale: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        //Kopfzeilen-Label Start
                         Label("Person", systemImage: "person.fill")
                             .labelStyle(IconOnlyLabelStyle())
                             .font(.system(size: 45.0))
                             .foregroundColor(Color.gray)
-                        
                     }
                     
                     VStack(alignment: .leading) {
@@ -38,14 +43,16 @@ struct Zentrale: View {
                             .font(.system(size: 12.5))
                             .foregroundColor(Color.white)
                         
-                        
-                        
+    
                         Label("Gast", systemImage: "person.fill")
                             .labelStyle(TitleOnlyLabelStyle())
                             .font(.system(size: 22.5))
                             .foregroundColor(Color.white)
                     }
+                    
+                    
                     Spacer()
+                    
                     
                     VStack(alignment: .leading) {
                         Label("Nächste Stunde • Schule aus", systemImage: "person.fill")
@@ -54,19 +61,17 @@ struct Zentrale: View {
                             .foregroundColor(Color.white)
                         
                         
-                        
                         Label("Wir wünschen dir einen schönen Tag!", systemImage: "person.fill")
                             .labelStyle(TitleOnlyLabelStyle())
                             .font(.system(size: 12.5))
                             .foregroundColor(Color.white)
-                        
-                       
                     }
+                    
+                    
                     Spacer()
                    
                     
-                    HStack() {
-                        //Benachrichtigungen
+                    HStack() { //Benachrichtigungen
                         Button(action: {
                             isPresented.toggle()
                         }) {
@@ -74,34 +79,32 @@ struct Zentrale: View {
                                 .font(.system(size: 25.0))
                                 .foregroundColor(.gray)
                                 .sheet(isPresented: $isPresented) {
-                                    Einstellungen_Zentrale()}}
-                        
-                        
-                        
-                        //Einstellungen
-                        Button(action: {
-                            //Vaccant
-                        }) {
-                            Image(systemName: "gearshape.fill")
-                                .font(.system(size: 25.0))
-                                .foregroundColor(.gray)
+                                    Einstellungen_Zentrale()
                             }
+                        }
                     }
-                    
-                    
                 }
                 .padding()
+                
+                
                 Divider()
                     .overlay(Color.gray)
                     .frame(minHeight: 11)
                 
+                
                 HStack(alignment: .top, spacing: 40) {
                     VStack {
                         ZStack{
-                            //Rechteck Hellgrau
                             RoundedRectangle(cornerRadius: 15)
-                                .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                .fill(CustomColor.superGrau)
                                 .frame(width: 325, height: 365)
+                            
+                            
+                            Image(systemName: "plus.app")
+                                .font(.system(size: 20.0))
+                                .foregroundColor(Color.white)
+                                .tracking(-0.24)
+                                .position(x: 300, y: 40)
                                 
                             
                             RoundedRectangle(cornerRadius: 10)
@@ -110,17 +113,19 @@ struct Zentrale: View {
                                 .padding()
                                 .position(x: 160, y: 65)
                             
-                                
-                            
-                            //Magazine Icon
-                            
-                            //Meine Termine / Hausaufgaben
-                            Text("Meine Arbeiten / Pfüfungen").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
+  
+                            Text("Meine Arbeiten / Pfüfungen")
+                                .font(.system(size: 17, weight: .bold))
+                                .foregroundColor(Color.white)
+                                .tracking(-0.24)
                                 .position(x: 160, y: 40)
                             
-                            
-                            //Inhaltszeug
-                            Text("Keine Arbeiten.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+
+                            Text("Keine Arbeiten.")
+                                .font(.system(size: 17, weight: .bold))
+                                .foregroundColor(Color.white)
+                                .tracking(-0.24)
+                                .multilineTextAlignment(.center)
                                 .position(x: 160, y: 200)
                         }
                     }
@@ -129,78 +134,71 @@ struct Zentrale: View {
                   
                         VStack {
                             ZStack{
-                                
-                                
-                                
-                                //Rechteck
                                 RoundedRectangle(cornerRadius: 15)
-                                    .fill(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .fill(CustomColor.superGrau)
                                     .frame(width: 325, height: 365)
                                 
                                 
-                                //Rechteck Hell
+                                Image(systemName: "plus.app")
+                                    .font(.system(size: 20.0))
+                                    .foregroundColor(Color.white)
+                                    .tracking(-0.24)
+                                    .position(x: 300, y: 40)
+                                
+
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.gray)
                                     .frame(width: 300, height: 10)
                                     .padding()
                                     .position(x: 160, y: 65)
+
                                 
-                                
-                                //Calendar Icon
-                                
-                                //Meine Termine / Hausaufgaben
-                                Text("Meine Termine / Hausaufgaben").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24)
+                                Text("Meine Termine / Hausaufgaben")
+                                    .font(.system(size: 17, weight:.bold))
+                                    .foregroundColor(Color.white)
+                                    .tracking(-0.24)
                                     .position(x: 160, y: 40)
+   
                                 
-                                
-                                
-                                //Inhaltszeug
-                                Text("Keine Hausaufgaben.").font(.system(size: 17, weight: .bold)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.24).multilineTextAlignment(.center)
+                                Text("Keine Hausaufgaben.")
+                                    .font(.system(size: 17, weight:.bold))
+                                    .foregroundColor(Color.white)
+                                    .tracking(-0.24).multilineTextAlignment(.center)
                                     .position(x: 175, y: 200)
-                                    
-                            }
                         }
+                    }
                     .padding()
 
                     
-                    
-                    
-                    
                     VStack(spacing: 0) {
-                        LazyVGrid(columns: columns,
-                                  alignment:
-                                .center,
-                                  spacing: 10) {
+                        LazyVGrid(columns: columns,alignment: .center, spacing: 10){
+                           
                             
-                            
-                                
-                                //Button der den Ferienkalender Öffnet lol.
-                             Button(action: {
-                                    print("Test Erfolgt")
-                                }) {
-                                    VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
-                                        Image(systemName: "calendar.badge.exclamationmark")
-                                            .font(.system(size: 20))
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                            .foregroundColor(.white)
-                                      
-                                           
-                                        Text("Ferienkalender")
-                                            .font(.system(size: 10.5))
-                                            .lineLimit(1) // Add line limit to prevent the text from overflowing
-                                            .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
-                                    }
-                                    .frame(width: 100, height: 56)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                                    .cornerRadius(15)
-                                    .buttonStyle(PlainButtonStyle())
+                            //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
+                            Button(action: {
+                                self.isPresented2 = true
+                            }) {
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Image(systemName: "doc")
+                                        .font(.system(size: 20))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    Text("Entschuldigungstool")
+                                        .font(.system(size: 10.2))
+                                        .lineLimit(1)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                 }
+                                .frame(width: 100, height: 56)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(CustomColor.superGrau)
+                                .cornerRadius(15)
+                                .buttonStyle(PlainButtonStyle())
+                                .sheet(isPresented: $isPresented2) {
+                                    Entschuldigungstool()
+                                }
+                            }
 
                             
-
-
                                 //Button der zu den News bzw. zum Schulnewsletter führt
                                 Button(action: {
                                     print("Test Erfolgt")
@@ -218,7 +216,7 @@ struct Zentrale: View {
                                     .frame(width: 100, height: 56)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .background(CustomColor.superGrau)
                                     .cornerRadius(15)
                                     .buttonStyle(PlainButtonStyle())
                                     .sheet(isPresented: $isPresented3) {
@@ -226,36 +224,32 @@ struct Zentrale: View {
                                     }
                                 }
 
-
-
-                   
-                                
-                                //Button um direkt zum Entschuldigungstool zu kommen, für Tage an denen DHL kommt :D
-                                Button(action: {
-                                    self.isPresented2 = true
-                                }) {
-                                    VStack(alignment: .leading, spacing: 5) {
-                                        Image(systemName: "doc")
-                                            .font(.system(size: 20))
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                        Text("Entschuldigungstool")
-                                            .font(.system(size: 10.2))
-                                            .lineLimit(1)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                    .frame(width: 100, height: 56)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-                                    .cornerRadius(15)
-                                    .buttonStyle(PlainButtonStyle())
-                                    .sheet(isPresented: $isPresented2) {
-                                        Entschuldigungstool()
-                                    }
+                            
+                            //Button der den Ferienkalender Öffnet lol.
+                         Button(action: {
+                                print("Test Erfolgt")
+                            }) {
+                                VStack(alignment: .leading, spacing: 5) { // Use VStack to align icon and text vertically to the left
+                                    Image(systemName: "calendar.badge.exclamationmark")
+                                        .font(.system(size: 20))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .foregroundColor(.white)
+                                  
+                                       
+                                    Text("Ferienkalender")
+                                        .font(.system(size: 10.5))
+                                        .lineLimit(1) // Add line limit to prevent the text from overflowing
+                                        .frame(maxWidth: .infinity, alignment: .leading) // Align text to the left
                                 }
-
-                                
-                                      
+                                .frame(width: 100, height: 56)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(CustomColor.superGrau)
+                                .cornerRadius(15)
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                                     
+                            
                                 //Button fürs Fehlzeiten Menü, evtl lustiges gif für Fehlzeitenlose?
                                 Button(action: {
                                     print("Test Erfolgt")
@@ -272,71 +266,54 @@ struct Zentrale: View {
                                     .frame(width: 100, height: 56)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .background(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                                    .background(CustomColor.superGrau)
                                     .cornerRadius(15)
                                     .buttonStyle(PlainButtonStyle())
                                     }
-                            
-                            
-                            
-                            
-                        }
-                      .padding()
+                                }
+                                .padding()
+                        
 
                         RoundedRectangle(cornerRadius: 20)
                             .padding()
-                            .foregroundColor(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
+                            .foregroundColor(CustomColor.superGrau)
+                            .frame(width: 310, height: 175)
+                        
+                        Text("Keine Noten verfügbar.")
+                            .font(.system(size: 17, weight:.bold))
+                            .foregroundColor(Color.white)
+                            .tracking(-0.24).multilineTextAlignment(.center)
+                            .position(x: 152.5, y: -92.5)
+                        
                     }
                     .padding()
+                    
                     
                 }
                 .padding()
                 .frame(height: 460)
                 Spacer()
+                
+                
             }
             .padding()
             .background(Color(red: 0.05, green: 0.05, blue: 0.05))
+            
+            
         }
-    
-    
-    
-    
-    
-    }  //Struct-Ende
-    
-    
-
-
-
-
-
-
 
     
-
-
-
-    struct Zentrale_Previews: PreviewProvider {
-        static var previews: some View {
-            Zentrale()
-                .previewInterfaceOrientation(.landscapeLeft)
-        }
     }
-
-
-
-    //Sub-Menü Benachrichtigungen start
     
-  
+
     struct Einstellungen_Zentrale: View {
         @State private var selectedDays = Set<Weekday>()
         @State private var notificationTime = Date()
         @State private var isConfigured = false
         
         enum Weekday: String, CaseIterable {
-            case sunday, monday, tuesday, wednesday, thursday, friday, saturday
+            case monday, tuesday, wednesday, thursday, friday, saturday, sunday
         }
-        
         
         
         let timeFormatter: DateFormatter = {
@@ -344,6 +321,7 @@ struct Zentrale: View {
             formatter.timeStyle = .short
             return formatter
         }()
+        
         
         var body: some View {
             VStack {
@@ -356,14 +334,17 @@ struct Zentrale: View {
                     }
                     .padding(.horizontal)
                     
+                    
                     TextField("HH:mm", value: $notificationTime, formatter: timeFormatter)
                         .keyboardType(.numbersAndPunctuation)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(height: 50)
                         .padding(.horizontal)
                     
+                    
                     Divider()
                         .padding(.horizontal)
+                    
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text("An welchen Tagen möchtest du Benachrichtigungen erhalten?")
@@ -394,7 +375,9 @@ struct Zentrale: View {
                     .padding(.horizontal)
                 }
                 
+                
                 Spacer()
+                
                 
                 HStack(spacing: 20) {
                     Button(action: {
@@ -408,8 +391,8 @@ struct Zentrale: View {
                             .background(Color.red)
                             .cornerRadius(10)
                             .position(x: 175, y: 160)
-                          
                     }
+                    
                     
                     Button(action: {
                         let content = UNMutableNotificationContent()
@@ -417,13 +400,17 @@ struct Zentrale: View {
                         content.body = "Lade dein iPad auf, du wirst es Morgen brauchen :)"
                         content.sound = UNNotificationSound.default
                         
+                        
                         let dateComponents = Calendar.current.dateComponents([.weekday, .hour, .minute], from: notificationTime)
+                        
                         
                         for weekday in selectedDays {
                             var components = dateComponents
                             components.weekday = Weekday.allCases.firstIndex(of: weekday)! + 1
                             
                             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+                            
+                            
                             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                             UNUserNotificationCenter.current().add(request)
                         }
@@ -442,7 +429,10 @@ struct Zentrale: View {
                     .padding(.horizontal)
                     .padding(.bottom, 20)
                     
+                    
                     Spacer()
+                    
+                    
                 }
                 .padding(.top, 20)
                 .navigationBarTitle("Push-Benachrichtigungen")
@@ -453,16 +443,7 @@ struct Zentrale: View {
         }
     }
 
-    
-//Sub-Menü Benachrichtigungen ende.
 
-
-
-
-
-//Entschuldigungstool Start
-
-    
     struct Entschuldigungstool: View {
         var body: some View {
             NavigationView {
@@ -474,24 +455,20 @@ struct Zentrale: View {
     }
     
     
-    
     struct WebView2: UIViewRepresentable {
         let request: URLRequest
+        
         
         func makeUIView(context: Context) -> WKWebView {
             return WKWebView()
         }
+        
         
         func updateUIView(_ uiView: WKWebView, context: Context) {
             uiView.load(request)
         }
     }
 
-
-//Entschuldigungstool Ende
-
-
-//News
 
 struct NewsView: View {
     var body: some View {
@@ -507,11 +484,21 @@ struct NewsView: View {
 struct WebView3: UIViewRepresentable {
     let request: URLRequest
     
+    
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
     
+    
     func updateUIView(_ uiView: WKWebView, context: Context) {
         uiView.load(request)
+    }
+}
+
+
+   struct Zentrale_Previews: PreviewProvider {
+    static var previews: some View {
+        Zentrale()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

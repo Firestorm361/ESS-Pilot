@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-@State var selection = 3
+struct CustomColor {
+        
+    static let superGrau = Color("superGrau")
+        
+    }
+    
+@State var selection = 2
     
     /* init() {
         UITabBar.appearance().backgroundColor = .black}*/
@@ -22,7 +28,6 @@ struct ContentView: View {
         TabView(selection:$selection) {
             
             
-            
             Stundenplan()
                 .tabItem(){
                     Image(systemName: "clock.circle")
@@ -30,21 +35,13 @@ struct ContentView: View {
                 }
                 .tag(1)
             
-            
-          /*  Karte()
-                .tabItem(){
-                    Image(systemName: "map.circle")
-                    Text("Karte")
-                }
-                .tag(2) */
-            
-            
+    
             Zentrale()
                 .tabItem(){
                     Image(systemName: "books.vertical.circle")
                     Text("Zentrale")
                 }
-                .tag(3)
+                .tag(2)
             
             
             Noten()
@@ -52,20 +49,12 @@ struct ContentView: View {
                     Image(systemName: "graduationcap.circle")
                     Text("Noten")
                 }
-                .tag(4)
+                .tag(3)
             
             
-         /*   TestingStuff()
-                .tabItem(){
-                    Image(systemName: "gear.circle")
-                    Text("N/A")
-                }
-                .tag(5) */
+            }
+
         
-        }
-        .onAppear {
-            UITabBar.appearance().barTintColor = UIColor(Color(#colorLiteral(red: 0.10196078568696976, green: 0.10196078568696976, blue: 0.10196078568696976, alpha: 1)))
-        }
         .accentColor(.blue)
         
         

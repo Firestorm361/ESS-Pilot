@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		553D6B84292BEC3A00030C50 /* Modularer Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D6B83292BEC3A00030C50 /* Modularer Slot.swift */; };
-		55A80752293D2D5500FDA27F /* TestingStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A80751293D2D5500FDA27F /* TestingStuff.swift */; };
 		55B60C1228F5E07500694507 /* ESS_Pilot_v2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B60C1128F5E07500694507 /* ESS_Pilot_v2_0App.swift */; };
 		55B60C1428F5E07500694507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B60C1328F5E07500694507 /* ContentView.swift */; };
 		55B60C1628F5E07600694507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B60C1528F5E07600694507 /* Assets.xcassets */; };
@@ -20,8 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		553D6B83292BEC3A00030C50 /* Modularer Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modularer Slot.swift"; sourceTree = "<group>"; };
-		55A80751293D2D5500FDA27F /* TestingStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingStuff.swift; sourceTree = "<group>"; };
 		55B55F0B2933DB490011CF53 /* ESS-Pilot-v2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ESS-Pilot-v2.0.entitlements"; sourceTree = "<group>"; };
 		55B60C0E28F5E07500694507 /* ESS-Pilot-v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ESS-Pilot-v2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B60C1128F5E07500694507 /* ESS_Pilot_v2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESS_Pilot_v2_0App.swift; sourceTree = "<group>"; };
@@ -91,8 +87,6 @@
 				55B60C2428F5E0F400694507 /* Karte.swift */,
 				55B60C2028F5E0D300694507 /* Zentrale.swift */,
 				55B60C2828F5E2DA00694507 /* Noten.swift */,
-				553D6B83292BEC3A00030C50 /* Modularer Slot.swift */,
-				55A80751293D2D5500FDA27F /* TestingStuff.swift */,
 			);
 			path = " Views";
 			sourceTree = "<group>";
@@ -174,9 +168,7 @@
 				55B60C2328F5E0E300694507 /* Stundenplan.swift in Sources */,
 				55B60C1428F5E07500694507 /* ContentView.swift in Sources */,
 				55B60C2928F5E2DA00694507 /* Noten.swift in Sources */,
-				55A80752293D2D5500FDA27F /* TestingStuff.swift in Sources */,
 				55B60C2528F5E0F400694507 /* Karte.swift in Sources */,
-				553D6B84292BEC3A00030C50 /* Modularer Slot.swift in Sources */,
 				55B60C1228F5E07500694507 /* ESS_Pilot_v2_0App.swift in Sources */,
 				55B60C2128F5E0D300694507 /* Zentrale.swift in Sources */,
 			);
